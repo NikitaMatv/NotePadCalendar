@@ -1,0 +1,42 @@
+﻿<Page x:Class="NotePadCalendar.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NotePadCalendar.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="900"
+      Title="MainPage">
+
+    <Grid Background="Black" Opacity="0.8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="20 150">
+            <TextBlock Text="Дата"  Foreground="White" FontSize="15"/>
+            <DatePicker x:Name="DpDate" Margin="0 10"/>
+            <TextBlock Text="Описание"  Foreground="White" FontSize="15" Margin="0 20 0 10"/>
+            <TextBox x:Name="TbDescription"  Height="200" AcceptsReturn="True"/>
+            <Button x:Name="BtnAdd" Click="BtnAdd_Click" Background="#FF323130" Foreground="White" Height="25" Width="200" FontSize="16" Content="Добавить" Margin="0 10 0 0"/>
+            <Button x:Name="BtnExit" Click="BtnExit_Click" Background="#FF323130" Foreground="White" Height="25" Width="200" FontSize="16" Content="Выход" Margin="0 10"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="0 50">
+            <TextBlock Text="Список напоминаний"  Foreground="White" FontSize="25" Margin="0 0 0 10"/>
+            <ListView x:Name="LvNote" Height="700" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="437" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="147*"/>
+                                <ColumnDefinition Width="290*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding NoteDate}" Height="30" Width="auto"/>
+                            <TextBlock Text="{Binding Description}" MaxWidth="290" TextWrapping="Wrap" Height="auto" Grid.Column="1" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>

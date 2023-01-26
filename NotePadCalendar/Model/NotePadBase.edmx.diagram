@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e35108d4bc1a4b3e91c0cf0e670d06da" Name="Diagram1">
+        <EntityTypeShape EntityType="NorthificationBaseModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthificationBaseModel.Note" Width="1.5" PointX="5.625" PointY="0.875" />
+        <EntityTypeShape EntityType="NorthificationBaseModel.User" Width="1.5" PointX="3.375" PointY="1" />
+        <AssociationConnector Association="NorthificationBaseModel.FK_Note_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
